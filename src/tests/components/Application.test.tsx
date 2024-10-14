@@ -50,6 +50,7 @@ describe("Application component", () => {
     const imageEl = screen.getByAltText("a person with a laptop");
     expect(imageEl).toBeInTheDocument();
     
-
+    const divEl = screen.getByTestId("custom-element");
+    expect(divEl).toBeInTheDocument();
   });
 })
