@@ -9,7 +9,7 @@ describe('Users component', () => {
     render(<Users />);
     const headingEl = screen.getByRole('heading', {
       name: 'Users'
-    });
+    }); 
     expect(headingEl).toBeInTheDocument();
   });
 

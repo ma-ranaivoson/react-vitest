@@ -39,6 +39,7 @@ describe("Application component", () => {
 
     const submitButtonEl = screen.getByRole("button");
     expect(submitButtonEl).toBeInTheDocument();
+    expect(submitButtonEl).not.toBeEnabled();
     
     const paragraphEl = screen.getByText(/all fields are mandatory/i);
     expect(paragraphEl).toBeInTheDocument();
