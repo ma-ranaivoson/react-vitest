@@ -1,4 +1,4 @@
-import { logRoles, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { describe, expect, test } from 'vitest';
 import { Skills } from '../../components/skills/Skills';
 
@@ -33,19 +33,23 @@ describe('Skills component', () => {
     });
 
     expect(startLearningBtnEl).not.toBeInTheDocument();
-  })
+  });
 
   test('Start learning button renders eventually', async () => {
-    const view = render(<Skills skills={skills} />);
+    render(<Skills skills={skills} />);
     // logRoles(view.container)
     // screen.debug()
-    const startLearningBtnEl = await screen.findByRole('button', {
-      name: 'Start learning', 
-    }, {
-      timeout: 2000
-    });
+    const startLearningBtnEl = await screen.findByRole(
+      'button',
+      {
+        name: 'Start learning',
+      },
+      {
+        timeout: 2000,
+      }
+    );
     // screen.debug()
 
     expect(startLearningBtnEl).toBeInTheDocument();
-  })
-}); 
+  });
+});
