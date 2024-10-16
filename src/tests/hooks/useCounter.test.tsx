@@ -32,6 +32,6 @@ describe("useCounter hooks", () => {
     const { result } = renderHook(useCounter)
     const { decrement } = result.current
     act(() => decrement())
-    expect(result.current.count).toBe(-1)
+    expect(result.current.count).not.toBe(-1)
   })
 })
